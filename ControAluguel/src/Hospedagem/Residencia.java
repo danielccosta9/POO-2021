@@ -5,7 +5,7 @@
 
 package Hospedagem;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,17 +18,19 @@ public class Residencia{
     private String cep;
     private String telefone;
     private String email;
-    private List<Quarto> quarto;
+    private ArrayList<Quarto> quarto = new ArrayList();
 
-    public Residencia(String rua, int numero, String bairro, String cep, String telefone, String email, List<Quarto> quarto) {
-        this.rua = rua;
-        this.numero = numero;
-        this.bairro = bairro;
-        this.cep = cep;
-        this.telefone = telefone;
-        this.email = email;
-        this.quarto = quarto;
-    }
+    public Residencia(String rua, int numero, String bairro, String cep, String telefone, String email, ArrayList<Quarto> quarto){
+    this.rua = rua;
+    this.numero = numero;
+    this.bairro = bairro;
+    this.cep = cep;
+    this.telefone = telefone;
+    this.email = email;
+    this.quarto = quarto;
+  }
+
+   
 
     
 
@@ -80,11 +82,11 @@ public class Residencia{
         this.email = email;
     }
 
-    public List<Quarto> getQuarto() {
+    public ArrayList<Quarto> getQuarto() {
         return quarto;
     }
 
-    public void setQuarto(List<Quarto> quarto) {
+    public void setQuarto(ArrayList<Quarto> quarto) {
         this.quarto = quarto;
     }
 
