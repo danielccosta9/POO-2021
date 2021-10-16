@@ -1,18 +1,22 @@
 /*
  * 4- Construa uma classe para representar o aluguel de um quarto contendo informações sobre: 
    o hóspede, o quarto alugado, a data e hora de entrada e de saída. 
-   Esta classe deve conter métodos para calcular o número de diárias e o valor a ser pago pelo locatário. 
-   As diárias iniciam e terminam sempre às 12h.
+    Esta classe deve conter métodos para calcular o número de diárias e o valor a ser pago pelo locatário. 
+    As diárias iniciam e terminam sempre às 12h.
  */
 package Hospedagem;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 
 /**
  *
  * @author daniel
  */
-public class Aluguel {
+public class Aluguel{
     private Quarto quarto;
     private Hospede hospede;
     private LocalDateTime dataHoraEntrada;
@@ -25,6 +29,17 @@ public class Aluguel {
         this.dataHoraSaida = dataHoraSaida;
     }
 
+    
+    public void calcularDiaria(){
+        int diaria = 0;
+        
+    }
+    
+    public void valorDiaria(){
+        
+    }
+    
+    
     public Quarto getQuarto() {
         return quarto;
     }
