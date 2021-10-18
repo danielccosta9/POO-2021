@@ -1,5 +1,4 @@
-
-import Hospedagem.HospedeDAO;
+package Hospedagem;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -9,7 +8,7 @@ import Hospedagem.HospedeDAO;
 
 /**
  *
- * @author Jose Barros
+ * @author daniel
  */
 public class CadastroHospede extends javax.swing.JFrame {
 
@@ -27,14 +26,14 @@ public class CadastroHospede extends javax.swing.JFrame {
         initComponents();
         this.editando = editando;
         this.hospede = hospede;
-        jTextFieldCodigo.setText(String.valueOf(hospede.getNome()));
+        jTextFieldCpf.setText(String.valueOf(hospede.getNome()));
         if (editando){
-            jTextFieldCodigo.setEditable(false);
+            jTextFieldCpf.setEditable(false);
         }
         
-        jTextFieldNomeCliente.setText((String) hospede.getNome());
-        jTextFieldSaldo.setText(String.valueOf(hospede.getSaldo()));
-        jTextFieldLimite.setText(String.valueOf(hospede.getLimite()));        
+        jTextFieldNome.setText((String) hospede.getNome());
+        jTextFieldCelular.setText(String.valueOf(hospede.getCelular()));
+        jTextFieldEndereco.setText(String.valueOf(hospede.getEndereco()));        
     }
 
     /**
@@ -49,31 +48,33 @@ public class CadastroHospede extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextFieldCodigo = new javax.swing.JTextField();
-        jTextFieldNomeCliente = new javax.swing.JTextField();
-        jTextFieldSaldo = new javax.swing.JTextField();
+        jTextFieldCpf = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldEndereco = new javax.swing.JTextField();
+        jTextFieldCelular = new javax.swing.JTextField();
+        jTextFieldTelefone = new javax.swing.JTextField();
+        jTextFieldEmailContato = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTextFieldLimite = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Código");
+        jLabel1.setText("CPF");
 
-        jLabel2.setText("Nome Cliente");
+        jLabel2.setText("Nome Hospede");
 
-        jLabel3.setText("Saldo");
+        jLabel3.setText("Telefone");
 
-        jTextFieldCodigo.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCodigoActionPerformed(evt);
+                jTextFieldCpfActionPerformed(evt);
             }
         });
 
-        jTextFieldNomeCliente.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNomeClienteActionPerformed(evt);
+                jTextFieldNomeActionPerformed(evt);
             }
         });
 
@@ -91,7 +92,7 @@ public class CadastroHospede extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Limite");
+        jLabel4.setText("Email");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,10 +112,10 @@ public class CadastroHospede extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(jButton2))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextFieldCodigo)
-                        .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-                        .addComponent(jTextFieldSaldo)
-                        .addComponent(jTextFieldLimite)))
+                        .addComponent(jTextFieldCpf)
+                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                        .addComponent(jTextFieldCelular)
+                        .addComponent(jTextFieldEndereco)))
                 .addContainerGap(78, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -125,18 +126,18 @@ public class CadastroHospede extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel2))
-                    .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextFieldSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextFieldLimite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -147,9 +148,9 @@ public class CadastroHospede extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCodigoActionPerformed
+    private void jTextFieldCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldCodigoActionPerformed
+    }//GEN-LAST:event_jTextFieldCpfActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
@@ -157,26 +158,27 @@ public class CadastroHospede extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         HospedeDAO banco = new HospedeDAO();
-        hospede.setNome(jTextFieldNomeCliente.getText());
-        hospede.setCpf(Double.parseDouble(jTextFieldSaldo.getText()));
-        hospede.setLimite(Float.parseFloat(jTextFieldLimite.getText()));
+        //nome, cpf, endereço, celular, telefone, email de contato
+        hospede.setNome(jTextFieldNome.getText());
+        hospede.setCpf(Double.parseDouble(jTextFieldCelular.getText()));
+        hospede.setLimite(Float.parseFloat(jTextFieldEndereco.getText()));
 
         if (!editando) {
-            conta.setCodigo(Integer.parseInt(jTextFieldCodigo.getText()));
-            banco.adicionarConta(conta);
+            hospede.setCodigo(Integer.parseInt(jTextFieldCpf.getText()));
+            banco.adicionarConta(hospede);
         } else {
             banco.updateConta(conta);
         }
 
-        jTextFieldCodigo.setText("");
-        jTextFieldNomeCliente.setText("");
-        jTextFieldSaldo.setText("");
-        jTextFieldLimite.setText("");
+        jTextFieldCpf.setText("");
+        jTextFieldNome.setText("");
+        jTextFieldCelular.setText("");
+        jTextFieldEndereco.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextFieldNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeClienteActionPerformed
+    private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNomeClienteActionPerformed
+    }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,6 +222,7 @@ public class CadastroHospede extends javax.swing.JFrame {
         });
     }
 
+    //nome, cpf, endereço, celular, telefone, email de contato
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -227,21 +230,11 @@ public class CadastroHospede extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextFieldCodigo;
-    private javax.swing.JTextField jTextFieldLimite;
-    private javax.swing.JTextField jTextFieldNomeCliente;
-    private javax.swing.JTextField jTextFieldSaldo;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldCpf;
+    private javax.swing.JTextField jTextFieldEndereco;
+    private javax.swing.JTextField jTextFieldCelular;
+    private javax.swing.JTextField jTextFieldTelefone;
+    private javax.swing.JTextField jTextFieldEmailContato;
     // End of variables declaration//GEN-END:variables
-
-    private void setNome(String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private Object getNome() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setCpf(double parseDouble) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
